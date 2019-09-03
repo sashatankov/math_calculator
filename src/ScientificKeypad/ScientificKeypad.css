@@ -1,0 +1,15 @@
+.scientifickeypad {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.scientifickeypad-row {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-start;
+}
+.scientifickeypad-item {
+    height: 100%;
+    width: 20%;
+}

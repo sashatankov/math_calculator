@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './RegularCalculator.css';
 import Panel from "../panel/Panel";
 import Keypad from "../keypad/Keypad";
+import ScientificKeypad from "../ScientificKeypad/ScientificKeypad";
 export default class RegularCalculator extends Component {
 
     constructor(props) {
