@@ -1,0 +1,8 @@
+.regularcalculator {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+}
