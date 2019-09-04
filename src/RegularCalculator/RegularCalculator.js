@@ -3,7 +3,6 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './RegularCalculator.css';
 import Panel from "../panel/Panel";
 import Keypad from "../keypad/Keypad";
-import ScientificKeypad from "../ScientificKeypad/ScientificKeypad";
 export default class RegularCalculator extends Component {
 
     constructor(props) {
@@ -17,6 +16,7 @@ export default class RegularCalculator extends Component {
         this.getButtonValue = this.getButtonValue.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.url = "http://127.0.0.1:5000/evaluate";
+        this.aboutController = new AbortController();
 
     }
 
@@ -27,6 +27,7 @@ export default class RegularCalculator extends Component {
 
     componentWillUnmount() {
         document.removeEventListener('keydown', (e) => this.handleKeyPress(e));
+        this.aboutController.abort();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -39,6 +40,7 @@ export default class RegularCalculator extends Component {
             console.log(JSON.stringify(expression));
             fetch(this.url,
                 {
+                    signal: this.aboutController.signal,
                     mode: "cors",
                     method: "post",
                     headers: { "Content-type": "application/json"},
@@ -99,8 +101,17 @@ export default class RegularCalculator extends Component {
   render() {
     return (
       <div className="regularcalculator">
+          <ReactCSSTransitionGroup
+          transitionName="keypad"
+          transitionAppear={true}
+          transitionEnter={true}
+          transitionLeave={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
         <Panel text={this.state.panelText}/>
         <Keypad button={this.getButtonValue}/>
+          </ReactCSSTransitionGroup>
       </div>
     )
   }

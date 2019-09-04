@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import Keypad from "../keypad/Keypad";
 import './ScientificKeypad.css';
 import Button from "../Button/Button";
-export default class ScientificKeypad extends Component {
+export default class ScientificKeypad extends Keypad {
+
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div className="scientifickeypad">

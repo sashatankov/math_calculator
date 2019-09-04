@@ -5,6 +5,7 @@
     height: 100%;
     font-size: 2em;
     transition: opacity 0.3s ease-in-out;
+    font-weight: 100;
 }
 .button:hover {
     opacity: 50%;
