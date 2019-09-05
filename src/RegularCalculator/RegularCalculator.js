@@ -59,9 +59,9 @@ export default class RegularCalculator extends Component {
         }
     }
 
-    getCurrentExpression(curExpr, curBtn) {
+    getCurrentExpression(curExpr, curBtn, isPanel) {
         console.log("cur button " + curBtn);
-        const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/"]
+        const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "(", ")", "sqrt", "."];
         if(curBtn === "C" || curBtn === "c") {
             return "";
         }
@@ -72,6 +72,11 @@ export default class RegularCalculator extends Component {
             return curExpr.slice(0, -1);
         }
         else if(keys.includes(curBtn)){
+            if(curBtn === "sqrt") {
+                console.log('sqrt');
+                return curExpr + "sqrt(";
+
+            }
             return curExpr + curBtn;
         }
         else {
@@ -81,9 +86,9 @@ export default class RegularCalculator extends Component {
 
     getButtonValue(value) {
        this.setState(prevState => ({
-           expr: this.getCurrentExpression(prevState.expr, value),
+           expr: this.getCurrentExpression(prevState.expr, value, false),
            lastCharEntered: value,
-           panelText: this.getCurrentExpression(prevState.expr, value)
+           panelText: this.getCurrentExpression(prevState.expr, value, true)
        }));
     }
 

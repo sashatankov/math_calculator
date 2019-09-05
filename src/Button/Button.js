@@ -6,8 +6,11 @@ export default class Button extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.value = this.props.value;
+    this.class = "button";
+    this.isPressed = false;
   }
   handleClick() {
+
     this.props.buttonValue(this.value);
   }
   render() {

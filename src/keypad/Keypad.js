@@ -6,13 +6,36 @@ export default class Keypad extends Component {
     constructor(props) {
         super(props);
         this.getButtonValue = this.getButtonValue.bind(this);
+        this.getSqrtButtonValue = this.getSqrtButtonValue.bind(this);
     }
     getButtonValue(value) {
         this.props.button(value);
     }
+    getSqrtButtonValue(value) {
+        this.props.button("sqrt");
+    }
+    getPiButtonValue(value) {
+        this.props.button("pi");
+    }
   render() {
     return (
       <div className="keypad">
+
+
+        <div className="keypad-row">
+            <div className='keypad-item'>
+                <Button value='C' buttonValue={this.getButtonValue}/>
+            </div>
+            <div className='keypad-item'>
+                <Button value='(' buttonValue={this.getButtonValue}/>
+            </div>
+            <div className='keypad-item'>
+                <Button value=')' buttonValue={this.getButtonValue}/>
+            </div>
+            <div className='keypad-item'>
+                <Button value='&radic;' buttonValue={this.getSqrtButtonValue}/>
+            </div>
+        </div>
         <div className="keypad-row">
           <div className='keypad-item'>
             <Button value='1' buttonValue={this.getButtonValue}/>
@@ -57,7 +80,7 @@ export default class Keypad extends Component {
         </div>
         <div className="keypad-row">
             <div className='keypad-item'>
-                <Button value='C' buttonValue={this.getButtonValue}/>
+                <Button value='.' buttonValue={this.getButtonValue}/>
             </div>
             <div className='keypad-item'>
                 <Button value='0' buttonValue={this.getButtonValue}/>
