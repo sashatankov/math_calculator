@@ -10,6 +10,7 @@ export default class Keypad extends Component {
         this.getPiButtonValue = this.getPiButtonValue.bind(this);
     }
     getButtonValue(value) {
+
         this.props.button(value);
     }
     getSqrtButtonValue(value) {
@@ -34,7 +35,7 @@ export default class Keypad extends Component {
                 <Button value=')' buttonValue={this.getButtonValue}/>
             </div>
             <div className='keypad-item'>
-                <Button value='&radic;' buttonValue={this.getSqrtButtonValue}/>
+                <Button value={'\u221A'} buttonValue={this.getButtonValue}/>
             </div>
         </div>
         <div className="keypad-row">

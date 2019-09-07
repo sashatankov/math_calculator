@@ -9,14 +9,14 @@ export default class ScientificCalculator extends RegularCalculator {
 
     constructor(props) {
         super(props);
+        this.keys = ["1", "2", "3", "4", "5", "6", "7", "8",
+            "9", "0", "+", "-", "*", "/", "(", ")", "^", "!", "pi", "e", "\u213C"];
+        this.funcs = ["sin", "cos", "tan", "log", "exp", "sqrt", ".", "\u221A"];
     }
 
 
     getCurrentExpression(curExpr, curBtn, isPanel) {
-        console.log("cur button " + curBtn);
-        const keys = ["1", "2", "3", "4", "5", "6", "7", "8",
-            "9", "0", "+", "-", "*", "/", "(", ")", "^", "!", "pi", "e"];
-        const funcs = ["sin", "cos", "tan", "log", "exp", "sqrt", "."];
+
         if(curBtn === "C" || curBtn === "c") {
             return "";
         }
@@ -26,8 +26,8 @@ export default class ScientificCalculator extends RegularCalculator {
         else if(curBtn === 'Backspace'){
             return curExpr.slice(0, -1);
         }
-        else if(keys.includes(curBtn)){
-            if(curBtn === "pi"){
+        else if(this.keys.includes(curBtn)){
+            if(curBtn === "\u213C"){
                 if(isPanel){
                     return curExpr + "\u213C"
                 }
@@ -35,7 +35,7 @@ export default class ScientificCalculator extends RegularCalculator {
             }
             return curExpr + curBtn;
         }
-        else if(funcs.includes(curBtn)) {
+        else if(this.funcs.includes(curBtn)) {
             if(curBtn === "sqrt") {
                 if(isPanel){
                     return curExpr + "\u221A" + "("

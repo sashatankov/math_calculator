@@ -7,12 +7,7 @@ export default class ScientificKeypad extends Keypad {
   constructor(props) {
     super(props);
   }
-    getSqrtButtonValue(value) {
-        this.props.button("sqrt");
-    }
-    // getPiButtonValue(value) {
-    //     this.props.button("pi");
-    // }
+
 
   render() {
     return (
@@ -33,7 +28,7 @@ export default class ScientificKeypad extends Keypad {
             <Button value="e" buttonValue={this.getButtonValue} />
           </div>
           <div className="scientifickeypad-item">
-            <Button value="&pi;" buttonValue={this.getPiButtonValue} />
+            <Button value={"\u213C"} buttonValue={this.getButtonValue} />
           </div>
           <div className="scientifickeypad-item">
             <Button value="^" buttonValue={this.getButtonValue} />

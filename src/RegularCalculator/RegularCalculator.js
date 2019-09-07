@@ -17,6 +17,7 @@ export default class RegularCalculator extends Component {
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.url = "http://127.0.0.1:5000/evaluate";
         this.aboutController = new AbortController();
+        this.keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "(", ")", "\u221A", "."];
 
     }
 
@@ -32,11 +33,11 @@ export default class RegularCalculator extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
 
-        console.log("component did update " + this.state.lastCharEntered);
         if(this.state.lastCharEntered === "=" ||
            this.state.lastCharEntered === "Enter"){
 
-            const expression = prevState.panelText;
+            const expression = prevState.expr;
+            console.log("expresion " + expression)
             console.log(JSON.stringify(expression));
             fetch(this.url,
                 {
@@ -60,8 +61,7 @@ export default class RegularCalculator extends Component {
     }
 
     getCurrentExpression(curExpr, curBtn, isPanel) {
-        console.log("cur button " + curBtn);
-        const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "(", ")", "sqrt", "."];
+
         if(curBtn === "C" || curBtn === "c") {
             return "";
         }
@@ -71,9 +71,8 @@ export default class RegularCalculator extends Component {
         else if(curBtn === 'Backspace'){
             return curExpr.slice(0, -1);
         }
-        else if(keys.includes(curBtn)){
-            if(curBtn === "sqrt") {
-                console.log('sqrt');
+        else if(this.keys.includes(curBtn)){
+            if(curBtn === "\u221A") {
                 if(isPanel) {
                     return curExpr + "\u221A" + "(" // the sqrt sign
                 }
@@ -97,14 +96,11 @@ export default class RegularCalculator extends Component {
 
     handleKeyPress(event) {
         const key = event.key;
-        console.log("key " + key);
         this.setState((prevState) => ({
-            expr: this.getCurrentExpression(prevState.expr, key),
+            expr: this.getCurrentExpression(prevState.expr, key, false),
             lastCharEntered: key,
-            panelText: this.getCurrentExpression(prevState.expr, key)
+            panelText: this.getCurrentExpression(prevState.panelText, key, true)
         }));
-
-
     }
   render() {
     return (
