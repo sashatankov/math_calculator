@@ -7,6 +7,7 @@ export default class Keypad extends Component {
         super(props);
         this.getButtonValue = this.getButtonValue.bind(this);
         this.getSqrtButtonValue = this.getSqrtButtonValue.bind(this);
+        this.getPiButtonValue = this.getPiButtonValue.bind(this);
     }
     getButtonValue(value) {
         this.props.button(value);

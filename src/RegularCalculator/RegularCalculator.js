@@ -74,6 +74,9 @@ export default class RegularCalculator extends Component {
         else if(keys.includes(curBtn)){
             if(curBtn === "sqrt") {
                 console.log('sqrt');
+                if(isPanel) {
+                    return curExpr + "\u221A" + "(" // the sqrt sign
+                }
                 return curExpr + "sqrt(";
 
             }
@@ -88,7 +91,7 @@ export default class RegularCalculator extends Component {
        this.setState(prevState => ({
            expr: this.getCurrentExpression(prevState.expr, value, false),
            lastCharEntered: value,
-           panelText: this.getCurrentExpression(prevState.expr, value, true)
+           panelText: this.getCurrentExpression(prevState.panelText, value, true)
        }));
     }
 

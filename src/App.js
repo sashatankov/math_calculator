@@ -3,6 +3,7 @@ import './App.css';
 import Navigation from "./navigation/Navigation";
 import RegularCalculator from "./RegularCalculator/RegularCalculator";
 import ScientificCalculator from "./ScientificCalculator/ScientificCalculator";
+import EquationCalculator from "./EquationCalculator/EquationCalculator";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 export default class App extends Component{
 
@@ -30,6 +31,11 @@ export default class App extends Component{
                 break;
 
             case this.screens.EQUATION:
+                this.setState((prevState) => ({currentScreen: <EquationCalculator />}));
+                break;
+
+            case this.screens.DERIVATIVE:
+            case this.screens.INTEGRAL:
                 this.setState((prevState) => ({currentScreen: ""}));
                 break;
         }

@@ -7,6 +7,10 @@ import ScientificKeypad from "../ScientificKeypad/ScientificKeypad";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 export default class ScientificCalculator extends RegularCalculator {
 
+    constructor(props) {
+        super(props);
+    }
+
 
     getCurrentExpression(curExpr, curBtn, isPanel) {
         console.log("cur button " + curBtn);
@@ -24,12 +28,18 @@ export default class ScientificCalculator extends RegularCalculator {
         }
         else if(keys.includes(curBtn)){
             if(curBtn === "pi"){
+                if(isPanel){
+                    return curExpr + "\u213C"
+                }
                 return curExpr + "pi"
             }
             return curExpr + curBtn;
         }
         else if(funcs.includes(curBtn)) {
             if(curBtn === "sqrt") {
+                if(isPanel){
+                    return curExpr + "\u221A" + "("
+                }
                 return curExpr + "sqrt(";
             }
             return curExpr + curBtn + "(";

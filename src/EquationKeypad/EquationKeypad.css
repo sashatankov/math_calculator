@@ -1,0 +1,36 @@
+.equationkeypad {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.equationkeypad-col {
+    display: flex;
+    height: 100%;
+    width: 20%;
+    flex-direction: column;
+    margin: 0.05em 0.05em 0.05em 0;
+}
+.equationkeypad-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    margin: 0.05em 0.05em 0.05em 0.025em;
+}
+.equationkeypad-item-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+    width: 100%;
+    height: 50%;
+    margin: 0.05em 0.05em 0.05em 0.025em;
+}
+
+.equationkeypad-item-action div {
+    background-color: #012840;
+}
