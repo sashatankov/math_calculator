@@ -19,7 +19,7 @@
 
 }
 .navigation div.mode-active {
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #eeeeee;
 }
 .navigation div span {
     font-size: 1.3em;

@@ -1,11 +1,12 @@
+/* blue bgn #03588C;*/
 html {
   padding: 0;
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   width: 100%;
   height: 100%;
   font-weight: 100;
-  background-color: #03588C;
+  background-color:  #03588C;
 }
 body {
   margin: 0;

@@ -1,16 +1,36 @@
+.regularcalculator-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+}
 .regularcalculator {
     display: flex;
     flex-direction: column;
     width: 50%;
-    height: 50%;
+    height: 100%;
     padding: 0;
     margin: 0;
+    justify-content: center;
+    align-items: center;
 }
-.regularcalculator span {
-    width: 100%;
+.regularcalculator-logscreen {
+    width: 50%;
     height: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.regularcalculator span {
+    width: 75%;
+    height: 50%;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .keypad-enter, .keypad-appear{
     opacity: 0.01;

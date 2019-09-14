@@ -1,0 +1,17 @@
+.logscreen {
+    height: 75%;
+    width: 75%;
+    background-color: #011826;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+
+}
+.logscreen-label {
+    color: #999999;
+    font-size: 1.6em;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 1em;
+}
