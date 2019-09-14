@@ -47,7 +47,7 @@ export default class EquationKeypad extends Keypad {
         </div>
         <div className="equationkeypad-col">
           <div className="equationkeypad-item">
-            <Button value="y" buttonValue={this.getButtonValue} />
+            <Button value="(" buttonValue={this.getButtonValue} />
           </div>
           <div className="equationkeypad-item">
             <Button value="3" buttonValue={this.getButtonValue} />
@@ -64,7 +64,7 @@ export default class EquationKeypad extends Keypad {
         </div>
         <div className="equationkeypad-col">
           <div className="equationkeypad-item">
-            <Button value="z" buttonValue={this.getButtonValue} />
+            <Button value=")" buttonValue={this.getButtonValue} />
           </div>
           <div className="equationkeypad-item">
             <Button value="+" buttonValue={this.getButtonValue} />

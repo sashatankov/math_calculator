@@ -12,9 +12,8 @@ export default class RegularCalculator extends Component {
             expr: "",
             lastCharEntered: '',
             panelText: "",
-
+            records: []
         };
-        this.records = [];
         this.getButtonValue = this.getButtonValue.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.url = "http://127.0.0.1:5000/evaluate";
@@ -52,12 +51,14 @@ export default class RegularCalculator extends Component {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
-                    this.records.append({question: expression, answer: data['result']});
                     this.setState(state => ({
                         expr: data['result'].toString(),
                         lastCharEntered: "",
-                        panelText: data['result'].toString()
+                        panelText: data['result'].toString(),
+                        records: [...this.state.records, {question: expression, answer: data['result']}]
                     }));
+                    console.log("records");
+                    console.log(this.state.records);
                 })
                 .catch((error) => {console.log("request failed ", error);});
         }
@@ -108,23 +109,24 @@ export default class RegularCalculator extends Component {
   render() {
     return (
         <div className="regularcalculator-wrapper">
+            <ReactCSSTransitionGroup
+                transitionName="keypad"
+                transitionAppear={true}
+                transitionEnter={true}
+                transitionLeave={true}
+                transitionAppearTimeout={500}
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}>
             <div className="regularcalculator">
-                <ReactCSSTransitionGroup
-                    transitionName="keypad"
-                    transitionAppear={true}
-                    transitionEnter={true}
-                    transitionLeave={true}
-                    transitionAppearTimeout={500}
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}>
-                    <Panel text={this.state.panelText}/>
-                    <Keypad button={this.getButtonValue}/>
-                </ReactCSSTransitionGroup>
+
+                <Panel text={this.state.panelText}/>
+                <Keypad button={this.getButtonValue}/>
+
             </div>
             <div className="regularcalculator-logscreen">
-                <LogScreen records={this.records}/>
+                <LogScreen records={this.state.records}/>
             </div>
-
+            </ReactCSSTransitionGroup>
         </div>
 
     )

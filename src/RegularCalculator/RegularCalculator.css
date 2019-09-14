@@ -5,13 +5,13 @@
     height: 100%;
     padding: 0;
     margin: 0;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 .regularcalculator {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    height: 100%;
+    width: 35%;
+    height: 50%;
     padding: 0;
     margin: 0;
     justify-content: center;

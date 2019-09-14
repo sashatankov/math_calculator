@@ -4,11 +4,14 @@ import './ScientificCalculator.css';
 import Panel from "../panel/Panel";
 import Keypad from "../keypad/Keypad";
 import ScientificKeypad from "../ScientificKeypad/ScientificKeypad";
+import LogScreen from "../LogScreen/LogScreen";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 export default class ScientificCalculator extends RegularCalculator {
 
     constructor(props) {
         super(props);
+        this.isPowOn = false;
+        this.powExpr = "";
         this.keys = ["1", "2", "3", "4", "5", "6", "7", "8",
             "9", "0", "+", "-", "*", "/", "(", ")", "^", "!", "pi", "e", "\u213C"];
         this.funcs = ["sin", "cos", "tan", "log", "exp", "sqrt", ".", "\u221A"];
@@ -59,12 +62,18 @@ export default class ScientificCalculator extends RegularCalculator {
             transitionAppearTimeout={500}
             transitionEnterTimeout={500}
             transitionLeaveTimeout={300}>
-
-          <Panel text={this.state.panelText}/>
-          <div className="scientificcalculator-keypad">
-            <Keypad button={this.getButtonValue} />
-            <ScientificKeypad button ={this.getButtonValue} />
+          <div className="scientificcalculator-keypad-wrapper">
+              <Panel text={this.state.panelText}/>
+              <div className="scientificcalculator-keypad">
+                  <Keypad button={this.getButtonValue} />
+                  <ScientificKeypad button ={this.getButtonValue} />
+              </div>
           </div>
+
+          <div className="scientificcalculator-logScreen">
+            <LogScreen records={this.state.records} />
+          </div>
+
         </ReactCSSTransitionGroup>
       </div>
     )

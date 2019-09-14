@@ -1,8 +1,8 @@
 .scientificcalculator {
     display: flex;
     flex-direction: column;
-    width: 75%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
     padding: 0;
     margin: 0;
 }
@@ -11,7 +11,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .scientificcalculator-keypad {
@@ -20,6 +20,24 @@
     display: flex;
     justify-content: space-between;
 }
+.scientificcalculator-keypad-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.scientificcalculator-logScreen {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .scikeypad-enter, .scikeypad-appear{
     opacity: 0.01;
     transform: translateY(-30px);

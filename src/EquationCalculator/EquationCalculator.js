@@ -62,7 +62,7 @@ export default class EquationCalculator extends RegularCalculator {
 
   getCurrentExpression(curExpr, curBtn, isPanel) {
     console.log("cur button " + curBtn);
-    const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "^", "x", "y", "z", ".", "="];
+    const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "^", "x", "(", ")", ".", "="];
     if(curBtn === "C" || curBtn === "c") {
       return "";
     }

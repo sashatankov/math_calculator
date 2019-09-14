@@ -5,6 +5,8 @@
     margin: 1em;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
 
 }
 .logscreen-label {
