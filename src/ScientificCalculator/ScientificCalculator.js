@@ -70,10 +70,12 @@ export default class ScientificCalculator extends RegularCalculator {
               </div>
           </div>
 
-          <div className="scientificcalculator-logScreen">
-            <LogScreen records={this.state.records} />
+          <div className={"scientific" + this.state.historyClass}>
+            <LogScreen records={this.state.records} hideHistory={this.hideHistory}/>
           </div>
-
+          <div className="scientificcalculator-history-btn" onClick={(e) => this.showHistory(e)}>
+            <i className="fas fa-history"> </i>
+          </div>
         </ReactCSSTransitionGroup>
       </div>
     )

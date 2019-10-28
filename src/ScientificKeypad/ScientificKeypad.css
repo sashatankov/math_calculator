@@ -10,10 +10,24 @@
     height: 20%;
     display: flex;
     justify-content: flex-end;
-    margin: 0.05em;
+    margin: 0.05em 0 0.05em 0;
 }
 .scientifickeypad-item {
     height: 100%;
     width: 20%;
-    margin: 0.05em;
+}
+
+.scikeypad-item-margin-left {
+    margin-left: 0.1em;
+}
+
+.scikeypad-item-margin-right {
+    margin-right: 0.1em;
+}
+
+.scikeypad-item-right-round-corner div {
+    border-bottom-right-radius: 15px;
+}
+.scikeypad-item-left-round-corner div {
+    border-bottom-left-radius: 15px;
 }

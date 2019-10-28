@@ -12,10 +12,13 @@ export default class RegularCalculator extends Component {
             expr: "",
             lastCharEntered: '',
             panelText: "",
-            records: []
+            records: [],
+            historyClass: "calculator-logscreen"
         };
         this.getButtonValue = this.getButtonValue.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
+        this.showHistory = this.showHistory.bind(this);
+        this.hideHistory = this.hideHistory.bind(this);
         this.url = "http://127.0.0.1:5000/evaluate";
         this.aboutController = new AbortController();
         this.keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "(", ")", "\u221A", "."];
@@ -106,6 +109,16 @@ export default class RegularCalculator extends Component {
             panelText: this.getCurrentExpression(prevState.panelText, key, true)
         }));
     }
+    showHistory(event) {
+        this.setState((prevState) => ({
+            historyClass: "calculator-logscreen calculator-logscreen-active"
+        }));
+    }
+    hideHistory() {
+        this.setState((prevState) => ({
+            historyClass: "calculator-logscreen"
+        }));
+    }
   render() {
     return (
         <div className="regularcalculator-wrapper">
@@ -123,8 +136,11 @@ export default class RegularCalculator extends Component {
                 <Keypad button={this.getButtonValue}/>
 
             </div>
-            <div className="regularcalculator-logscreen">
-                <LogScreen records={this.state.records}/>
+            <div className={"regular" + this.state.historyClass}>
+                <LogScreen records={this.state.records} hideHistory={this.hideHistory}/>
+            </div>
+            <div className="regularcalculator-history-btn" onClick={(e) => this.showHistory(e)}>
+                <i className="fas fa-history"> </i>
             </div>
             </ReactCSSTransitionGroup>
         </div>

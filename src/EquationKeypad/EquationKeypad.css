@@ -11,7 +11,7 @@
     height: 100%;
     width: 20%;
     flex-direction: column;
-    margin: 0.05em 0.05em 0.05em 0;
+    margin: 0 0  0.05em 0;
 }
 .equationkeypad-item {
     display: flex;
@@ -19,7 +19,7 @@
     align-items: center;
     width: 100%;
     height: 20%;
-    margin: 0.05em 0.05em 0.05em 0.025em;
+    margin-top: 0.1em;
 }
 .equationkeypad-item-action {
     display: flex;
@@ -28,9 +28,24 @@
     font-size: 0.6em;
     width: 100%;
     height: 50%;
-    margin: 0.05em 0.05em 0.05em 0.025em;
+    margin-top: 0.1em;
 }
 
 .equationkeypad-item-action div {
     background-color: #011826;
+}
+
+.eqkeypad-item-margin-left {
+    margin-left: 0.1em;
+}
+
+.eqkeypad-item-margin-right {
+    margin-right: 0.1em;
+}
+
+.eqkeypad-item-right-round-corner div {
+    border-bottom-right-radius: 15px;
+}
+.eqkeypad-item-left-round-corner div {
+    border-bottom-left-radius: 15px;
 }

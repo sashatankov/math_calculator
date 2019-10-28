@@ -5,6 +5,7 @@ export default class LogScreen extends Component {
 
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   getRecords() {
@@ -12,13 +13,20 @@ export default class LogScreen extends Component {
       return <LogRecord question={record.question} answer={record.answer} />
     });
   }
+  handleClick(event) {
+    this.props.hideHistory();
+  }
   render() {
     return (
       <div className="logscreen">
         <div className="logscreen-label">
           History:
         </div>
+        <div className="logscreen-close" onClick={(e) => this.handleClick(e)}>
+          <i className="fas fa-times"> </i>
+        </div>
         {this.getRecords()}
+
       </div>
     )
   }

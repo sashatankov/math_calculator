@@ -7,8 +7,9 @@
     margin: 0.5em 1em 0.5em 1em;
     font-size: 1.3em;
     flex-shrink: 0;
+    box-sizing: border-box;
 }
-.logrecord span {
+.logrecord  span {
     height: 100%;
     width: 100%;
     display: flex;

@@ -4,7 +4,7 @@
     //margin-bottom: 1em;
     display: flex;
     justify-content: flex-start;
-    background-color: #049DBF;
+    //background-color: #049DBF;
 }
 .panel div {
     width: 100%;
@@ -16,6 +16,8 @@
     background-color: #012840;
     font-size: 2em;
     color: #eeeeee;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
 .panel div:focus {
     outline: none;

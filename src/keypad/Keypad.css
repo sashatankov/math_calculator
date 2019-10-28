@@ -10,11 +10,29 @@
     height: 20%;
     display: flex;
     justify-content: flex-start;
-    margin: 0.05em 0.05em 0.05em 0;
+    margin: 0.05em 0 0.05em 0;
 }
 
 .keypad-item {
     width: 25%;
     height: 100%;
-    margin: 0.05em 0.05em 0.05em 0.025em;
+
 }
+
+.keypad-item-margin-left {
+    margin-left: 0.1em;
+}
+
+.keypad-item-margin-right {
+    margin-right: 0.1em;
+}
+
+.keypad-item-right-round-corner div {
+    border-bottom-right-radius: 15px;
+}
+.keypad-item-left-round-corner div {
+    border-bottom-left-radius: 15px;
+}
+
+
+

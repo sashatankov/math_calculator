@@ -11,7 +11,7 @@ export default class EquationKeypad extends Keypad {
   render() {
     return (
       <div className="equationkeypad">
-        <div className="equationkeypad-col">
+        <div className="equationkeypad-col eqkeypad-item-margin-right">
           <div className="equationkeypad-item">
             <Button value="C" buttonValue={this.getButtonValue} />
           </div>
@@ -24,11 +24,11 @@ export default class EquationKeypad extends Keypad {
           <div className="equationkeypad-item">
             <Button value="7" buttonValue={this.getButtonValue} />
           </div>
-          <div className="equationkeypad-item">
+          <div className="equationkeypad-item eqkeypad-item-left-round-corner">
             <Button value="." buttonValue={this.getButtonValue} />
           </div>
         </div>
-        <div className="equationkeypad-col">
+        <div className="equationkeypad-col eqkeypad-item-margin-right">
           <div className="equationkeypad-item">
             <Button value="x" buttonValue={this.getButtonValue} />
           </div>
@@ -45,7 +45,7 @@ export default class EquationKeypad extends Keypad {
             <Button value="0" buttonValue={this.getButtonValue} />
           </div>
         </div>
-        <div className="equationkeypad-col">
+        <div className="equationkeypad-col eqkeypad-item-margin-right">
           <div className="equationkeypad-item">
             <Button value="(" buttonValue={this.getButtonValue} />
           </div>
@@ -62,7 +62,7 @@ export default class EquationKeypad extends Keypad {
             <Button value="=" buttonValue={this.getButtonValue} />
           </div>
         </div>
-        <div className="equationkeypad-col">
+        <div className="equationkeypad-col eqkeypad-item-margin-right">
           <div className="equationkeypad-item">
             <Button value=")" buttonValue={this.getButtonValue} />
           </div>
@@ -83,7 +83,7 @@ export default class EquationKeypad extends Keypad {
           <div className='equationkeypad-item-action'>
             <Button value="Solve" buttonValue={this.getButtonValue}/>
           </div>
-          <div className='equationkeypad-item-action'>
+          <div className='equationkeypad-item-action eqkeypad-item-right-round-corner'>
             <Button value="Simplify" buttonValue={this.getButtonValue} />
           </div>
         </div>
