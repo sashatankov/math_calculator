@@ -1,0 +1,94 @@
+.derivativecalculator {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.derivativecalculator > span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+}
+
+.derivativecalculator-keypad {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.derivativecalculator-keypad-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.derivativecalculator-logscreen {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: -700px;
+    transition: all 0.4s ease-in;
+}
+.calculator-logscreen-active {
+    right: 10px;
+    z-index: 200;
+    transition: all 0.4s ease-in;
+}
+
+.derivativecalculator-history-btn {
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    bottom: 7vh;
+    right: 4vw;
+    color: #eeeeee;
+    background-color: #011826;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+}
+.derivativecalculator-history-btn i {
+    font-size: 2.5em;
+}
+
+
+.derkeypad-enter, .derkeypad-appear{
+    opacity: 0.01;
+    transform: translateY(-30px);
+}
+.derkeypad-enter.derkeypad-enter-active, .derkeypad-appear.derkeypad-appear-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 500ms ease-in-out;
+}
+
+.derkeypad-leave {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.derkeypad-leave.derkey-leave-active {
+    opacity: 0.01;
+    transform: translateY(-30px);
+    transition: all 300ms ease-out;
+}
+.derkeypad-leave.derkey-leave-active {
+    opacity: 0.01;
+    transform: translateY(100px);
+    transition: all 300ms ease-out;
+}

@@ -4,6 +4,7 @@ import Navigation from "./navigation/Navigation";
 import RegularCalculator from "./RegularCalculator/RegularCalculator";
 import ScientificCalculator from "./ScientificCalculator/ScientificCalculator";
 import EquationCalculator from "./EquationCalculator/EquationCalculator";
+import DerivativeCalculator from "./DerivativeCalculator/DerivativeCalculator";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 export default class App extends Component{
 
@@ -35,6 +36,8 @@ export default class App extends Component{
                 break;
 
             case this.screens.DERIVATIVE:
+                this.setState((prevState) => ({currentScreen: <DerivativeCalculator />}))
+                break;
             case this.screens.INTEGRAL:
                 this.setState((prevState) => ({currentScreen: ""}));
                 break;
