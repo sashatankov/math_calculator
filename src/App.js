@@ -5,6 +5,7 @@ import RegularCalculator from "./RegularCalculator/RegularCalculator";
 import ScientificCalculator from "./ScientificCalculator/ScientificCalculator";
 import EquationCalculator from "./EquationCalculator/EquationCalculator";
 import DerivativeCalculator from "./DerivativeCalculator/DerivativeCalculator";
+import ComingSoonScreen from "./ComingSoonScreen/ComingSoonScreen";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 export default class App extends Component{
 
@@ -39,7 +40,7 @@ export default class App extends Component{
                 this.setState((prevState) => ({currentScreen: <DerivativeCalculator />}))
                 break;
             case this.screens.INTEGRAL:
-                this.setState((prevState) => ({currentScreen: ""}));
+                this.setState((prevState) => ({currentScreen: <ComingSoonScreen />}));
                 break;
         }
     };

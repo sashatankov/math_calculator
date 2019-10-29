@@ -1,0 +1,7 @@
+.comingsoonscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6em;
+    color: rgba(255, 255, 255, 0.2);
+}
